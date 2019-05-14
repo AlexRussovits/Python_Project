@@ -36,7 +36,7 @@ class Game():
 
     def set_surface_and_title(self):
         """Задаем surface(поверхность поверх которой будет все рисоваться)
-        и устанавливаем загаловок окна"""
+        и устанавливаем заголовок окна"""
         self.play_surface = pygame.display.set_mode((
             self.screen_width, self.screen_height))
         pygame.display.set_caption('Food Devourer')
@@ -114,7 +114,7 @@ class Snake():
         self.change_to = self.direction
 
     def validate_direction_and_change(self):
-        """Изменияем направление движения змеи только в том случае,
+        """Изменяем направление движения змеи только в том случае,
         если оно не прямо противоположно текущему"""
         if any((self.change_to == "RIGHT" and not self.direction == "LEFT",
                 self.change_to == "LEFT" and not self.direction == "RIGHT",
@@ -164,7 +164,7 @@ class Snake():
                     pos[0], pos[1], 10, 10))
 
     def check_for_boundaries(self, game_over, screen_width, screen_height):
-        """Проверка, что столкунлись с концами экрана или сами с собой
+        """Проверка, если змея столкнулась с концами экрана или сама с собой
         (змея закольцевалась)"""
         if any((
             self.snake_head_pos[0] > screen_width-10
